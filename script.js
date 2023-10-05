@@ -4,20 +4,18 @@
 let getComputerChoice = function () {
  
     const randomNumber = Math.floor(Math.random()*3)
-    let = option
+
 
     switch(randomNumber) {
         case 0:
-            ComputerChoice = "ROCK"
+            return "ROCK"
             break
         case 1:
-            ComputerChoice = "PAPER"
+            return "PAPER"
             break
         default:
-            ComputerChoice = "SCISSORS"
+            return "SCISSORS"
           
     }
-
-    console.log(ComputerChoice)
 
 }
