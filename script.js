@@ -54,9 +54,11 @@ let playOneRound = function (playerSelection,computerSelection) {
 
 let getPlayerSelection = function () {
 
-    let choice = parseInt(prompt("Please enter your Choice: "));
+    let choice = prompt("Please enter your Choice: ");
 
     let upper = choice.toUpperCase();
+
+    console
 
     return upper
 
