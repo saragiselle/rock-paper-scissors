@@ -23,19 +23,40 @@ let getComputerChoice = function () {
 
 let playOneRound = function (playerSelection,computerSelection) {
 
-    const playerSelection = getplayerSelection();
-    const computerSelection = getComputerChoice();
+    if (playerSelection==computerSelection) {
+        return "It's a tie!"
+    } else if (playerSelection == "ROCK") {
+            switch(computerSelection){
+                case "PAPER": 
+                    return "You Lose! Paper beats Rock"
+                case "SCISSORS":
+                    return "You Win! Rock beats Scissors"
+            }   
+    } else if (playerSelection == "PAPER") {
+            switch(computerSelection){
+                case "ROCK": 
+                    return "You Win! Paper beats Rock"
+                case "SCISSORS":
+                    return "You Lose! Scissors beats Paper"
+            }   
+    } else {
+            switch(computerSelection){
+                case "ROCK": 
+                    return "You Lose! Rock beats Scissors"
+                case "PAPER":
+                    return "You Lose! Scissors beats Paper"
+        }   
+    }
 
-    return "You Lose! Paper beats Rock"
 }
 
 //Make your function’s playerSelection parameter case-insensitive
 
 let getplayerSelection = function () {
 
-    let selection = parseInt(prompt("Please enter your Selection: "));
+    let choice = parseInt(prompt("Please enter your Choice: "));
 
-    let upper = selection.toUpperCase();
+    let upper = choice.toUpperCase();
 
     return upper
 
