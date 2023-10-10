@@ -52,7 +52,7 @@ let playOneRound = function (playerSelection,computerSelection) {
 
 //Make your function’s playerSelection parameter case-insensitive
 
-let getplayerSelection = function () {
+let getPlayerSelection = function () {
 
     let choice = parseInt(prompt("Please enter your Choice: "));
 
