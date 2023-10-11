@@ -66,7 +66,7 @@ let getPlayerSelection = function () {
 
 
     const PlayerSelection = getPlayerSelection();
-    console.log("Elegiste " + PlayerSelection);
+    console.log("you chose " + PlayerSelection);
     const ComputerSelection = getComputerChoice();
-    console.log("La computadora eligió" + PlayerSelection);
+    console.log("The computer choses " + PlayerSelection);
     console.log(playOneRound(PlayerSelection,ComputerSelection))
