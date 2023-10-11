@@ -22,7 +22,7 @@ let getComputerChoice = function () {
 //The function should take two parameters 
 
 let playOneRound = function (playerSelection,computerSelection) {
-
+    console.log(playerSelection,computerSelection )
     if (playerSelection==computerSelection) {
         return "It's a tie!"
     } else if (playerSelection == "ROCK") {
@@ -66,7 +66,7 @@ let getPlayerSelection = function () {
 
 
     const PlayerSelection = getPlayerSelection();
-    console.log("you chose " + PlayerSelection);
+    console.log("You chose " + PlayerSelection);
     const ComputerSelection = getComputerChoice();
-    console.log("The computer choses " + PlayerSelection);
+    console.log("The computer choses " + ComputerSelection);
     console.log(playOneRound(PlayerSelection,ComputerSelection))
