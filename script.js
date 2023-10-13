@@ -68,14 +68,11 @@ let getPlayerSelection = function () {
 
     let upper = choice.toUpperCase();
 
-    console
-
     return upper
 
 }
 
 let game = function() {
- 
 
 
     for (let i = 0; i < 5 ; i++){
@@ -88,6 +85,11 @@ let game = function() {
 
     }
 
+    if (playerScore > computerScore ) {
+        console.log("Congratulation, you win");
+    } else {
+        console.log("Sorry, you lose :(");
+    }
 }
 
 game();
