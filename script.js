@@ -22,29 +22,35 @@ let getComputerChoice = function () {
 //The function should take two parameters 
 
 let playOneRound = function (playerSelection,computerSelection) {
-    console.log(playerSelection,computerSelection )
+
     if (playerSelection==computerSelection) {
         return "It's a tie!"
     } else if (playerSelection == "ROCK") {
             switch(computerSelection){
                 case "PAPER": 
+                    computerScore ++;
                     return "You Lose! Paper beats Rock"
                 case "SCISSORS":
+                    playerScore ++;
                     return "You Win! Rock beats Scissors"
             }   
     } else if (playerSelection == "PAPER") {
             switch(computerSelection){
-                case "ROCK": 
+                case "ROCK":
+                    computerScore ++; 
                     return "You Win! Paper beats Rock"
                 case "SCISSORS":
+                    playerScore ++;
                     return "You Lose! Scissors beats Paper"
             }   
     } else {
             switch(computerSelection){
-                case "ROCK": 
+                case "ROCK":
+                    computerScore ++; 
                     return "You Lose! Rock beats Scissors"
                 case "PAPER":
-                    return "You Lose! Scissors beats Paper"
+                    playerScore ++;
+                    return "You Win! Scissors beats Paper"
         }   
     }
 
@@ -64,7 +70,10 @@ let getPlayerSelection = function () {
 
 }
 
-let game(){
+let game = function() {
+ 
+    let playerScore = 0;
+    let computerScore = 0;
 
     for (let i = 0; i < 5 ; i++){
         
@@ -73,11 +82,11 @@ let game(){
         const ComputerSelection = getComputerChoice();
         console.log("The computer choses " + ComputerSelection);
         console.log(playOneRound(PlayerSelection,ComputerSelection));
-        
-    }
-    
 
+    }
 
 }
+
+game();
 
 
