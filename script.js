@@ -1,5 +1,9 @@
 // Begin with a function called getComputerChoice that will 
 //randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
+//global variables
+
+let playerScore = 0;
+let computerScore = 0;
 
 let getComputerChoice = function () {
  
@@ -72,8 +76,7 @@ let getPlayerSelection = function () {
 
 let game = function() {
  
-    let playerScore = 0;
-    let computerScore = 0;
+
 
     for (let i = 0; i < 5 ; i++){
         
