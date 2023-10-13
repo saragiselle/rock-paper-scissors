@@ -64,9 +64,20 @@ let getPlayerSelection = function () {
 
 }
 
+let game(){
 
-    const PlayerSelection = getPlayerSelection();
-    console.log("You chose " + PlayerSelection);
-    const ComputerSelection = getComputerChoice();
-    console.log("The computer choses " + ComputerSelection);
-    console.log(playOneRound(PlayerSelection,ComputerSelection))
+    for (let i = 0; i < 5 ; i++){
+        
+        const PlayerSelection = getPlayerSelection();
+        console.log("You chose " + PlayerSelection);
+        const ComputerSelection = getComputerChoice();
+        console.log("The computer choses " + ComputerSelection);
+        console.log(playOneRound(PlayerSelection,ComputerSelection));
+        
+    }
+    
+
+
+}
+
+
