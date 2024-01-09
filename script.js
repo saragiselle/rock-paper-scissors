@@ -72,7 +72,7 @@ let getPlayerSelection = function () {
 
 }
 
-let game = function() {
+/*let game = function() {
 
 
     for (let i = 0; i < 5 ; i++){
@@ -91,7 +91,7 @@ let game = function() {
         console.log("Sorry, you lose :(");
     }
 }
-
+*/
 game();
 
 
