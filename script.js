@@ -92,6 +92,17 @@ let getPlayerSelection = function () {
     }
 }
 */
+
+const btnRock = document.querySelector('#btnRock');
+const btnPaper = document.querySelector('#btnPaper');
+const btnScissors = document.querySelector('#btnScissors');
+
+btnRock.addEventListener('click', playOneRound);
+btnPaper.addEventListener('click', playOneRound);
+btnScissors.addEventListener('click', playOneRound);
+
+
+
 game();
 
 
