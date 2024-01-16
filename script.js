@@ -60,30 +60,17 @@ let playOneRound = function (playerSelection,computerSelection) {
 
 }
 
-//Make your function’s playerSelection parameter case-insensitive
-
-let getPlayerSelection = function () {
-
-    let choice = prompt("Please enter your Choice: ");
-
-    let upper = choice.toUpperCase();
-
-    return upper
-
-}
-
-/*let game = function() {
 
 
-    for (let i = 0; i < 5 ; i++){
-        
-        const PlayerSelection = getPlayerSelection();
-        console.log("You chose " + PlayerSelection);
-        const ComputerSelection = getComputerChoice();
-        console.log("The computer choses " + ComputerSelection);
-        console.log(playOneRound(PlayerSelection,ComputerSelection));
 
-    }
+let game = function() {
+
+    const PlayerSelection = getPlayerSelection();
+    console.log("You chose " + PlayerSelection);
+    const ComputerSelection = getComputerChoice();
+    console.log("The computer choses " + ComputerSelection);
+    console.log(playOneRound(PlayerSelection,ComputerSelection));
+
 
     if (playerScore > computerScore ) {
         console.log("Congratulation, you win");
@@ -91,15 +78,21 @@ let getPlayerSelection = function () {
         console.log("Sorry, you lose :(");
     }
 }
-*/
+
 
 const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 
-btnRock.addEventListener('click', playOneRound);
-btnPaper.addEventListener('click', playOneRound);
-btnScissors.addEventListener('click', playOneRound);
+btnRock.addEventListener('click', function(){
+    playOneRound("ROCK",getComputerChoice())
+});
+btnPaper.addEventListener('click', function(){
+    playOneRound("PAPER",getComputerChoice())
+});
+btnScissors.addEventListener('click', function(){
+    playOneRound("SCISSOR",getComputerChoice())
+});
 
 
 
