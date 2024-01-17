@@ -2,12 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-<h2> FUNNY GAME!!</h2>
- 
+<header class="header">
+  <h1 class="title"> ROCK PAPER SCISSORS</h1>
+</header>
 
   <div class="user-buttons">
     <button class="btn symbol" id="btnRock"></button>
@@ -23,7 +24,18 @@
         <img src="images/scissors-hand-icons.png" height="30px" />
       </div>
   </div>
-  <script src="script.js"></script>
+
+<div class="messages-result">
+  <div id ="playerScorePara"></div>
+  <div id ="playerScorePara"></div>
+</div>
+
+<div class="scores-result">
+  <div id="computerScore"></div>
+  <div id="playerScore"></div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
