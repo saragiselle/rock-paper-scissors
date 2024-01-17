@@ -58,9 +58,15 @@ let playOneRound = function (playerSelection,computerSelection) {
         }   
     }
 
+
 }
 
 
+const btnRock = document.querySelector('#btnRock');
+const btnPaper = document.querySelector('#btnPaper');
+const btnScissors = document.querySelector('#btnScissors');
+const playerScorePara = document.querySelector('#playerScorePara');
+const computerScorePara = document.querySelector('#computerScorePara');
 
 
 let game = function() {
@@ -70,7 +76,7 @@ let game = function() {
     const ComputerSelection = getComputerChoice();
     console.log("The computer choses " + ComputerSelection);
     console.log(playOneRound(PlayerSelection,ComputerSelection));
-
+  
 
     if (playerScore > computerScore ) {
         console.log("Congratulation, you win");
@@ -80,20 +86,24 @@ let game = function() {
 }
 
 
-const btnRock = document.querySelector('#btnRock');
-const btnPaper = document.querySelector('#btnPaper');
-const btnScissors = document.querySelector('#btnScissors');
 
 btnRock.addEventListener('click', function(){
     playOneRound("ROCK",getComputerChoice())
+    updateDOM();
 });
 btnPaper.addEventListener('click', function(){
     playOneRound("PAPER",getComputerChoice())
+    updateDOM();
 });
 btnScissors.addEventListener('click', function(){
     playOneRound("SCISSOR",getComputerChoice())
+    updateDOM();
 });
 
+let updateDOM = function(){
+    document.querySelector('#computerScore').textContent = computerScore;
+    document.querySelector('#playerScore').textContent = playerScore;
+}
 
 
 game();
