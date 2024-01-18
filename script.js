@@ -4,6 +4,7 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let roundWinner = ''
 
 let getComputerChoice = function () {
  
@@ -28,38 +29,50 @@ let getComputerChoice = function () {
 let playOneRound = function (playerSelection,computerSelection) {
 
     if (playerSelection==computerSelection) {
-        return "It's a tie!"
+        roundWinner = "tie!"
     } else if (playerSelection == "ROCK") {
             switch(computerSelection){
                 case "PAPER": 
                     computerScore ++;
-                    return "You Lose! Paper beats Rock"
+                    roundWinner = "computer"
                 case "SCISSORS":
                     playerScore ++;
-                    return "You Win! Rock beats Scissors"
+                    roundWinner = "player"
             }   
     } else if (playerSelection == "PAPER") {
             switch(computerSelection){
                 case "ROCK":
                     computerScore ++; 
-                    return "You Win! Paper beats Rock"
+                    roundWinner = "player"
                 case "SCISSORS":
                     playerScore ++;
-                    return "You Lose! Scissors beats Paper"
+                    roundWinner = "computer"
             }   
     } else {
             switch(computerSelection){
                 case "ROCK":
                     computerScore ++; 
-                    return "You Lose! Rock beats Scissors"
+                    roundWinner = "computer"
                 case "PAPER":
                     playerScore ++;
-                    return "You Win! Scissors beats Paper"
+                    roundWinner = "player"
         }   
     }
 
+    updateMessageDOM(roundWinner, playerScore, computerSelection)
 
 }
+
+function isGameOver() {
+    return playerScore === 5 || computerScore === 5;
+}
+
+
+let updateDOM = function(){
+    document.querySelector('#computerScore').textContent = computerScore;
+    document.querySelector('#playerScore').textContent = playerScore;
+}
+
 
 
 const btnRock = document.querySelector('#btnRock');
@@ -67,6 +80,8 @@ const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 const playerScorePara = document.querySelector('#playerScorePara');
 const computerScorePara = document.querySelector('#computerScorePara');
+const computerScoreResult = document.querySelector('#computerScore');
+const playerScoreResult = document.querySelector('#playerScore');
 
 
 let game = function() {
@@ -100,10 +115,7 @@ btnScissors.addEventListener('click', function(){
     updateDOM();
 });
 
-let updateDOM = function(){
-    document.querySelector('#computerScore').textContent = computerScore;
-    document.querySelector('#playerScore').textContent = playerScore;
-}
+
 
 
 game();
