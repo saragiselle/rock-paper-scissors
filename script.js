@@ -78,10 +78,10 @@ let updateDOM = function(){
 const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
-const playerScorePara = document.querySelector('#playerScorePara');
-const computerScorePara = document.querySelector('#computerScorePara');
-const computerScoreResult = document.querySelector('#computerScore');
-const playerScoreResult = document.querySelector('#playerScore');
+const playerScorePara = document.querySelector('#playerScore');
+const computerScorePara = document.querySelector('#computerScore');
+const scoreInfo = document.querySelector('#scoreInfo');
+const scoreMessage = document.querySelector('#scoreMessage');
 
 
 let game = function() {
@@ -102,20 +102,15 @@ let game = function() {
 
 
 
-btnRock.addEventListener('click', function(){
-    playOneRound("ROCK",getComputerChoice())
-    updateDOM();
-});
-btnPaper.addEventListener('click', function(){
-    playOneRound("PAPER",getComputerChoice())
-    updateDOM();
-});
-btnScissors.addEventListener('click', function(){
-    playOneRound("SCISSOR",getComputerChoice())
-    updateDOM();
-});
+btnRock.addEventListener('click',()=> handleClick('ROCK'));
+btnPaper.addEventListener('click',()=> handleClick('PAPER'));
+btnScissors.addEventListener('click',()=> handleClick('SCISSORS'));
 
-
+function handleClick(playerSelection) {
+    if (isGameOver()) {
+        return
+    }
+}
 
 
 game();
